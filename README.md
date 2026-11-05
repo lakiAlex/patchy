@@ -70,8 +70,11 @@ Ubuntu backports fixes into older version numbers, so for PHP, nginx, MySQL and 
 With Homebrew:
 
 ```sh
+brew trust --cask lakialex/tap/patchy
 brew install --cask lakialex/tap/patchy
 ```
+
+Homebrew only loads casks from other taps once they are trusted, which the first line does.
 
 Or download `Patchy_<version>_aarch64.dmg` from [Releases](../../releases), open it, and drag `Patchy` into the Applications folder. The build is for Apple Silicon Macs and needs macOS 11 or later. A `.app.zip` is attached too.
 
