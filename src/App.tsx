@@ -7,6 +7,7 @@ import { loadSettings, saveSettings, uiFontCss, type NoticeLevel, type Range, ty
 import type { Theme } from "./lib/theme";
 import { GROUP_LABELS, loadStack, saveStack, type Group, type Stack } from "./lib/watch";
 import { Icon, type IconName } from "./components/icons";
+import { UpdateButton } from "./components/Update";
 import { MemeButton } from "./components/Meme";
 import { loadNotices, NoticeBell, saveNotices, toNotice, type Notice } from "./components/Notices";
 import { SettingsDialog } from "./components/SettingsDialog";
@@ -368,6 +369,7 @@ export default function App() {
         </div>
         <div className="titlebar-spacer" data-tauri-drag-region />
         <div className="titlebar-actions">
+          <UpdateButton app="Patchy" repo="lakiAlex/patchy" notify={settings.macNotifications} />
           <span className="titlebar-status">
             {progress
               ? `Checking ${progress.done} of ${progress.total} feeds`

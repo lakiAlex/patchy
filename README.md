@@ -76,7 +76,7 @@ brew install --cask lakialex/tap/patchy
 
 Homebrew only loads casks from other taps once they are trusted, which the first line does.
 
-Or download `Patchy_<version>_aarch64.dmg` from [Releases](../../releases), open it, and drag `Patchy` into the Applications folder. The build is for Apple Silicon Macs and needs macOS 11 or later. A `.app.zip` is attached too.
+Or download the `.dmg` from [Releases](../../releases), open it, and drag `Patchy` into the Applications folder. The build runs on Apple Silicon and Intel Macs and needs macOS 11 or later.
 
 The app is not signed with an Apple Developer certificate or notarized, so the first time you open a download macOS says it cannot be verified. Either right-click the app and choose Open, then confirm once, or run:
 
@@ -85,6 +85,8 @@ xattr -dr com.apple.quarantine /Applications/Patchy.app
 ```
 
 The Homebrew cask does this for you.
+
+Patchy checks GitHub for new versions. When one is out, an Update button shows in the title bar with what changed, and Update and restart installs it. Versions from before the update button need one `brew upgrade --cask patchy` or a new download to get it.
 
 ## Build from source
 
@@ -110,6 +112,7 @@ pnpm tauri dev     # port 1440, so it runs next to Lookout (1430)
 | `src/lib/watch.ts` | The watch list and its defaults. |
 | `src/lib/settings.ts` | Settings and their defaults. |
 | `src/App.tsx` | The window: title bar, sidebar, stack panel, filters and dialogs. |
+| `src/components/Update.tsx` | The update button and panel, shared with Lookout, Dispatch and Cells. `VITE_FAKE_UPDATE=1 pnpm tauri dev` shows a made-up update. |
 | `src/styles-base.css` | Shared with Lookout and Dispatch. |
 
 The app icon is Hugeicons' BandageIcon on Lookout's icon background, built with Icon Composer so the Dock shows it like the other apps. `src-tauri/icons/source/make-icon.mjs` and `src-tauri/icons/build-icon.sh` have the steps. The README GIF and title are described in [docs/demo-gif.md](docs/demo-gif.md).

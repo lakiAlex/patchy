@@ -76,6 +76,8 @@ const mock = () => {
   const handlers = {
     fetch_json: ({ url, body }) => window.__fetchJson(url, body),
     clear_cache: () => null,
+    // No update in the GIF.
+    "plugin:updater|check": () => null,
     "plugin:event|listen": ({ handler }) => {
       listeners[handler] = handler;
       return n++;
