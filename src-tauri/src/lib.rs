@@ -149,6 +149,8 @@ pub fn run() {
         .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_process::init())
         .plugin(tauri_plugin_notification::init())
+        // Anonymous usage stats. Only release builds from the workflow have the key. Without it the plugin sends nothing.
+        .plugin(tauri_plugin_aptabase::Builder::new(option_env!("APTABASE_APP_KEY").unwrap_or("")).build())
         .setup(|app| {
             let client = reqwest::Client::builder()
                 .user_agent(concat!("Patchy/", env!("CARGO_PKG_VERSION")))

@@ -27,3 +27,4 @@ reqwest = { version = "0.13", features = ["json", "gzip"] }
 thiserror = "2.0.21"
 tauri-plugin-updater = "2"
 tauri-plugin-process = "2"
+tauri-plugin-aptabase = "1.3"

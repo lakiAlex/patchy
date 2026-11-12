@@ -22,6 +22,8 @@ export interface Settings {
   defaultRange: Range;
   uiFont: "system" | "geist";
   memes: boolean;
+  /** Sends an anonymous event to Aptabase when the app starts. */
+  usageStats: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -36,6 +38,7 @@ export const DEFAULT_SETTINGS: Settings = {
   defaultRange: "30",
   uiFont: "system",
   memes: true,
+  usageStats: true,
 };
 
 const KEY = "patchy.settings";

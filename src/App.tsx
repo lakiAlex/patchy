@@ -4,6 +4,7 @@ import { isPermissionGranted, requestPermission, sendNotification } from "@tauri
 import { Moon, Sun } from "lucide-react";
 import { clearCache, loadSnapshot, type Progress, type Severity, type Snapshot, type Vuln } from "./lib/feeds";
 import { loadSettings, saveSettings, uiFontCss, type NoticeLevel, type Range, type Settings } from "./lib/settings";
+import { trackAppStarted } from "./lib/usage";
 import type { Theme } from "./lib/theme";
 import { GROUP_LABELS, loadStack, saveStack, type Group, type Stack } from "./lib/watch";
 import { BrandMark, Icon, type IconName } from "./components/icons";
@@ -136,6 +137,8 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => document.documentElement.style.setProperty("--font", uiFontCss(settings.uiFont)), [settings.uiFont]);
+  // Once per launch, with the setting as it was at startup.
+  useEffect(() => trackAppStarted(settings.usageStats), []);
 
   const changeSettings = (next: Settings) => {
     saveSettings(next);

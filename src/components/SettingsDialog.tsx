@@ -165,6 +165,9 @@ export function SettingsDialog(props: {
             <Row label="Memes" hint="The cat button in the corner">
               <Toggle label="Memes" checked={s.memes} onChange={(v) => set("memes", v)} />
             </Row>
+            <Row label="Anonymous usage stats" hint="Counts app starts, with no personal data">
+              <Toggle label="Anonymous usage stats" checked={s.usageStats} onChange={(v) => set("usageStats", v)} />
+            </Row>
           </section>
 
           <section className="setting-section">

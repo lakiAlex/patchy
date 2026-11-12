@@ -82,6 +82,10 @@ The app is not signed with an Apple Developer certificate or notarized. The cask
 
 Patchy checks GitHub for new versions. When one is out, an Update button shows in the title bar with what changed, and Update and restart installs it. Versions from before the update button need one `brew upgrade --cask patchy` to get it.
 
+## Usage stats
+
+Patchy sends one anonymous event to [Aptabase](https://aptabase.com) when it starts, to count how many people use it. The event has the app version, macOS version and locale, with no personal data and nothing about your stack. Aptabase uses the IP address to look up the country and does not store it. Turn it off in Settings, Anonymous usage stats. Builds from source send nothing.
+
 ## Build from source
 
 ```sh
