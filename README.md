@@ -76,17 +76,11 @@ brew install --cask lakialex/tap/patchy
 
 Homebrew only loads casks from other taps once they are trusted, which the first line does.
 
-Or download the `.dmg` from [Releases](../../releases), open it, and drag `Patchy` into the Applications folder. The build runs on Apple Silicon and Intel Macs and needs macOS 11 or later.
+The build runs on Apple Silicon and Intel Macs and needs macOS 11 or later. Homebrew is the only way to install it.
 
-The app is not signed with an Apple Developer certificate or notarized, so the first time you open a download macOS says it cannot be verified. Either right-click the app and choose Open, then confirm once, or run:
+The app is not signed with an Apple Developer certificate or notarized. The cask removes the quarantine flag after install, so macOS opens it without the "cannot be verified" message.
 
-```sh
-xattr -dr com.apple.quarantine /Applications/Patchy.app
-```
-
-The Homebrew cask does this for you.
-
-Patchy checks GitHub for new versions. When one is out, an Update button shows in the title bar with what changed, and Update and restart installs it. Versions from before the update button need one `brew upgrade --cask patchy` or a new download to get it.
+Patchy checks GitHub for new versions. When one is out, an Update button shows in the title bar with what changed, and Update and restart installs it. Versions from before the update button need one `brew upgrade --cask patchy` to get it.
 
 ## Build from source
 
@@ -95,8 +89,6 @@ pnpm install
 pnpm tauri build
 ditto src-tauri/target/release/bundle/macos/Patchy.app /Applications/Patchy.app
 ```
-
-The build also writes a DMG to `src-tauri/target/release/bundle/dmg`.
 
 ## Development
 
