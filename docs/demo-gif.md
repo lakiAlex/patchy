@@ -59,4 +59,4 @@ python3 -E -c "from PIL import Image; im = Image.open('docs/demo.gif'); print(im
 
 ## The title image
 
-`docs/title-dark.png` and `docs/title-light.png` are the app icon and the name, as in Lookout's README. `node scripts/make-title.cjs` renders both from `src-tauri/icons/source/icon.png`.
+`docs/title-dark.png` and `docs/title-light.png` are the app icon and the name, as in Lookout's README. `node scripts/make-title.cjs` renders both from `src-tauri/icons/AppIcon.icon/Assets/background.png`.

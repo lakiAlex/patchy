@@ -115,7 +115,7 @@ pnpm tauri dev     # port 1440, so it runs next to Lookout (1430)
 | `src/components/Update.tsx` | The update button and panel, shared with Lookout, Dispatch and Cells. `VITE_FAKE_UPDATE=1 pnpm tauri dev` shows a made-up update. |
 | `src/styles-base.css` | Shared with Lookout and Dispatch. |
 
-The app icon is Hugeicons' BandageIcon on Lookout's icon background, built with Icon Composer so the Dock shows it like the other apps. `src-tauri/icons/source/make-icon.mjs` and `src-tauri/icons/build-icon.sh` have the steps. The README GIF and title are described in [docs/demo-gif.md](docs/demo-gif.md).
+The app icon is Hugeicons' BandageIcon as a raised white band on a graphite background, built with Icon Composer so the Dock shows it like the other apps. `src-tauri/icons/make-icon.py` and `src-tauri/icons/build-icon.sh` have the steps. The README GIF and title are described in [docs/demo-gif.md](docs/demo-gif.md).
 
 ## Third-party software
 

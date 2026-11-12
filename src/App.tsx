@@ -6,7 +6,7 @@ import { clearCache, loadSnapshot, type Progress, type Severity, type Snapshot, 
 import { loadSettings, saveSettings, uiFontCss, type NoticeLevel, type Range, type Settings } from "./lib/settings";
 import type { Theme } from "./lib/theme";
 import { GROUP_LABELS, loadStack, saveStack, type Group, type Stack } from "./lib/watch";
-import { Icon, type IconName } from "./components/icons";
+import { BrandMark, Icon, type IconName } from "./components/icons";
 import { UpdateButton } from "./components/Update";
 import { MemeButton } from "./components/Meme";
 import { loadNotices, NoticeBell, saveNotices, toNotice, type Notice } from "./components/Notices";
@@ -361,7 +361,7 @@ export default function App() {
       <header className="titlebar" data-tauri-drag-region>
         <div className="titlebar-left" data-tauri-drag-region>
           <span className="brand" data-tauri-drag-region>
-            <Icon name="logo" size={17} bold />
+            <BrandMark />
             <span className="brand-name" data-tauri-drag-region>
               Patchy
             </span>

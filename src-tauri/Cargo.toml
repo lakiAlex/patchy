@@ -1,6 +1,6 @@
 [package]
 name = "patchy"
-version = "1.0.1"
+version = "1.0.2"
 description = "Security dashboard: CVEs, advisories and patches for the stack I work with"
 authors = []
 edition = "2024"

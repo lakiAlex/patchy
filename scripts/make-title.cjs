@@ -9,7 +9,7 @@ const path = require("path");
 const { chromium } = require("playwright-core");
 
 const root = path.join(__dirname, "..");
-const icon = fs.readFileSync(path.join(root, "src-tauri/icons/source/icon.png")).toString("base64");
+const icon = fs.readFileSync(path.join(root, "src-tauri/icons/AppIcon.icon/Assets/background.png")).toString("base64");
 
 function findChromium() {
   const base = path.join(os.homedir(), "Library/Caches/ms-playwright");

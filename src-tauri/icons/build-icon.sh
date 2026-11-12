@@ -2,8 +2,9 @@
 # Rebuilds Assets.car and icon.icns from AppIcon.icon (Icon Composer format), as in Lookout.
 # macOS 26 draws a light border around apps that only ship a legacy .icns, so the
 # bundle also carries Assets.car, selected by CFBundleIconName in ../Info.plist.
-# AppIcon.icon/Assets/background.png is source/icon.png (see source/make-icon.mjs).
-# After replacing it, run `pnpm tauri icon src-tauri/icons/source/icon.png` from the project root,
+# AppIcon.icon/Assets/background.png is the Hugeicons bandage glyph as a raised white band on a graphite background,
+# rendered by `python3 make-icon.py` in this folder (needs Pillow).
+# After regenerating it, run `pnpm tauri icon src-tauri/icons/AppIcon.icon/Assets/background.png` from the project root,
 # delete the android and ios folders it adds, then run this script (tauri icon overwrites icon.icns).
 set -e
 cd "$(dirname "$0")"
